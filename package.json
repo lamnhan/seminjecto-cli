@@ -1,0 +1,37 @@
+{
+  "name": "cli",
+  "version": "0.0.1",
+  "description": "Seminjecto CLI app skeleton.",
+  "author": "Lam Nhan",
+  "homepage": "https://lamnhan.com",
+  "license": "MIT",
+  "main": "./src/public-api.js",
+  "typings": "./src/public-api.d.ts",
+  "bin": {
+    "cli": "./src/index.js"
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "lint": "gts check",
+    "fix": "gts fix",
+    "build": "npm run compile && npm i -g",
+    "docs": "docsuper generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lamnhan/seminjecto-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lamnhan/seminjecto-cli/issues"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.12",
+    "gts": "^1.1.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4"
+  }
+}
