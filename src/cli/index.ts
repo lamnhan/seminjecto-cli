@@ -2,6 +2,8 @@ import chalk from 'chalk';
 import * as commander from 'commander';
 import { LibModule } from '../public-api';
 
+type CommandDef = [string, string, ...Array<[string, string]>];
+
 export class Cli {
   private libModule: LibModule;
 
