@@ -7,7 +7,7 @@ type CommandDef = [string, string, ...Array<[string, string]>];
 export class Cli {
   private libModule: LibModule;
 
-  commander = ['cli', 'Seminjecto CLI app.'];
+  commander = ['cli', 'A Seminjecto project.'];
 
   constructor() {
     this.libModule = new LibModule();
