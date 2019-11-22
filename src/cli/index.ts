@@ -2,8 +2,6 @@ import chalk from 'chalk';
 import * as commander from 'commander';
 import { LibModule } from '../public-api';
 
-type CommandDef = [string, string, ...Array<[string, string]>];
-
 export class Cli {
   private libModule: LibModule;
 
@@ -11,6 +9,7 @@ export class Cli {
 
   constructor() {
     this.libModule = new LibModule();
+    // commands
   }
 
   getApp() {
@@ -20,11 +19,13 @@ export class Cli {
       .usage(`${command} [options] [command]`)
       .description(description);
 
+    // help
     commander
       .command('help')
       .description('Display help.')
       .action(() => commander.outputHelp());
 
+    // *
     commander
       .command('*')
       .description('Any other command is not supported.')
@@ -36,3 +37,5 @@ export class Cli {
   }
 
 }
+
+type CommandDef = [string, string, ...Array<[string, string]>];
