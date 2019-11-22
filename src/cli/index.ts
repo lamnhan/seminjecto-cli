@@ -9,7 +9,6 @@ export class Cli {
 
   constructor() {
     this.libModule = new LibModule();
-    // commands
   }
 
   getApp() {
