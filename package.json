@@ -20,7 +20,7 @@
     "lint": "gts check",
     "fix": "gts fix",
     "build": "npm run compile && npm i -g",
-    "docs": "docsuper generate",
+    "docs": "ayedocs generate README.md -t basicx",
     "test": "npm run compile && nyc --cache false mocha test/**/*.js",
     "coverage": "nyc --cache false report --reporter=text-lcov | coveralls"
   },
