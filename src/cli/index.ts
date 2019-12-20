@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+import { red } from 'chalk';
 import * as commander from 'commander';
 import { LibModule } from '../public-api';
 
@@ -29,7 +29,7 @@ export class Cli {
       .command('*')
       .description('Any other command is not supported.')
       .action((cmd: string) =>
-        console.error(chalk.red(`Unknown command '${cmd}'`))
+        console.error(red(`Unknown command '${cmd}'`))
       );
 
     return commander;
