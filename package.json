@@ -5,10 +5,10 @@
   "author": "Lam Nhan",
   "homepage": "https://lamnhan.com",
   "license": "MIT",
-  "main": "./src/public-api.js",
-  "typings": "./src/public-api.d.ts",
+  "main": "src/public-api.js",
+  "typings": "src/public-api.d.ts",
   "bin": {
-    "cli": "./src/bin.js"
+    "cli": "src/bin.js"
   },
   "files": [
     "src",
@@ -16,12 +16,17 @@
     "**/*.d.ts"
   ],
   "scripts": {
-    "compile": "tsc -p .",
+    "compile": "tsc",
+    "build": "npm.cmd run compile && npm.cmd i -g",
+    "docs": "ayedocs generate",
+    "test": "npm.cmd run compile && nyc --cache false mocha test/**/*.js",
+    "coverage": "nyc --cache false report --reporter=text-lcov | coveralls",
+    "check": "gts check",
     "fix": "gts fix",
-    "build": "npm run compile && npm i -g",
-    "docs": "ayedocs generate README.md -t clix",
-    "test": "npm run compile && nyc --cache false mocha test/**/*.js",
-    "coverage": "nyc --cache false report --reporter=text-lcov | coveralls"
+    "clean": "gts clean",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run check"
   },
   "keywords": [
     "node",
@@ -36,19 +41,18 @@
     "url": "https://github.com/lamnhan/seminjecto-cli/issues"
   },
   "dependencies": {
-    "chalk": "^3.0.0",
-    "commander": "^4.1.1"
+    "chalk": "^4.0.0",
+    "commander": "^5.1.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.9",
-    "@types/mocha": "^7.0.1",
-    "@types/node": "^13.7.4",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^14.0.5",
     "chai": "^4.2.0",
-    "coveralls": "^3.0.9",
-    "gts": "^1.1.2",
-    "mocha": "^7.0.1",
-    "nyc": "^15.0.0",
-    "tslint": "^6.0.0",
-    "typescript": "^3.7.5"
+    "coveralls": "^3.1.0",
+    "gts": "^2.0.2",
+    "mocha": "^7.2.0",
+    "nyc": "^15.0.1",
+    "typescript": "^3.9.3"
   }
 }

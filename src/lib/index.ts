@@ -1,5 +1,5 @@
 
-export class Main {
+export class Lib {
 
   constructor() {
   }

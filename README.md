@@ -1,4 +1,4 @@
-# Seminjecto CLI App Skeleton
+# Seminjecto CLI Skeleton
 
 Skeleton for a [Seminjecto](https://github.com/lamnhan/seminjecto) CLI app.
 

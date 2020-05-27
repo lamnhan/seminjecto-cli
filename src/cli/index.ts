@@ -1,6 +1,6 @@
-import { red } from 'chalk';
+import {red} from 'chalk';
 import * as commander from 'commander';
-import { LibModule } from '../public-api';
+import {LibModule} from '../public-api';
 
 export class Cli {
   private libModule: LibModule;
