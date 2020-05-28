@@ -1,5 +1,5 @@
 import {red} from 'chalk';
-import * as commander from 'commander';
+import {Command} from 'commander';
 import {LibModule} from '../public-api';
 
 export class Cli {
@@ -12,10 +12,14 @@ export class Cli {
   }
 
   getApp() {
+    const commander = new Command();
+
+    // general
     const [command, description] = this.commander;
     commander
       .version(require('../../package.json').version, '-v, --version')
-      .usage(`${command} [options] [command]`)
+      .name(`${command}`)
+      .usage('[options] [command]')
       .description(description);
 
     // help
@@ -28,9 +32,7 @@ export class Cli {
     commander
       .command('*')
       .description('Any other command is not supported.')
-      .action((cmd: string) =>
-        console.error(red(`Unknown command '${cmd}'`))
-      );
+      .action(cmd => console.error(red(`Unknown command '${cmd.args[0]}'`)));
 
     return commander;
   }
