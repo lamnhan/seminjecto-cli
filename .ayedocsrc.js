@@ -1,6 +1,6 @@
 module.exports = {
   url: 'https://example.com',
   fileRender: {
-    'README.md': 'basicx'
+    'README.md': 'clix'
   }
 };
