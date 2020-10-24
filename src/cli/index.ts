@@ -39,4 +39,4 @@ export class Cli {
 
 }
 
-type CommandDef = [string, string, ...Array<[string, string]>];
+type CommandDef = [string | string[], string, ...Array<[string, string]>];
